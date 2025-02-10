@@ -6,7 +6,7 @@ plugins {
     application
 
     // Using SpotBugs to help streamline development
-    id("com.github.spotbugs") version "6.0.22"
+    id("com.github.spotbugs") version "6.1.3"
 
     /*
      * Add tasks to create a fat jar
