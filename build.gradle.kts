@@ -43,7 +43,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("it.github.zekecode.Main")
+    mainClass.set("it.github.zekecode.cowboy_bebop.Main")
 }
 
 // Setting up JavaFX versions and needed modules
