@@ -43,12 +43,12 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("it.github.zekecode.cowboy_bebop.Main")
+    mainClass.set("github.zekecode.cowboybebop.Main")
 }
 
 // Setting up JavaFX versions and needed modules
 javafx {
-    version = "23.0.2"
+    version = "17.0.14"
     modules = listOf(
         "javafx.controls",
         "javafx.base",
