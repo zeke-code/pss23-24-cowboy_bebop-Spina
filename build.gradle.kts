@@ -7,6 +7,8 @@ plugins {
 
     // Using SpotBugs to help streamline development
     id("com.github.spotbugs") version "6.1.5"
+    // Using spotless for code formatting
+    id("com.diffplug.spotless") version "7.0.2"
 
     /*
      * Add tasks to create a fat jar
@@ -20,12 +22,12 @@ plugins {
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
+    // Use Maven Central to resolve dependencies.
     mavenCentral()
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
+    // Use JUnit Jupiter frameowrk for unit testing.
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.12.0")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -38,6 +40,13 @@ dependencies {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+// Spotless configuration to use Google Formatting for Java
+spotless {
+    java {
+        googleJavaFormat()
     }
 }
 
