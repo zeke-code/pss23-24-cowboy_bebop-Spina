@@ -6,7 +6,7 @@ plugins {
     application
 
     // Using SpotBugs to help streamline development
-    id("com.github.spotbugs") version "6.1.6"
+    id("com.github.spotbugs") version "6.1.7"
     // Using spotless for code formatting
     id("com.diffplug.spotless") version "7.0.2"
 
