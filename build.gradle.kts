@@ -15,7 +15,7 @@ plugins {
      * To create it, run on a terminal "./gradlew shadowJar
      * The runnable jar will be found in build/libs/projectname-all.jar
      */
-    id("com.gradleup.shadow") version "9.0.0-beta9"
+    id("com.gradleup.shadow") version "9.0.0-beta11"
 
     // JavaFX plugin to streamline JavaFX setup
     id("org.openjfx.javafxplugin") version "0.1.0"
