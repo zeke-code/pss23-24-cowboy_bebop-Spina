@@ -6,13 +6,13 @@ import java.util.UUID;
 
 /**
  * The Entity class represents a single game object in the Entity-Component-System architecture.
- * 
- * Entities are lightweight containers that exist primarily as identifiers and holders for
- * components. They have no behavior of their own - all game logic related to entities is
- * implemented in Systems that operate on their components. An entity's identity and behavior
- * is defined entirely by its unique combination of components.
  *
- * Each entity is assigned a unique identifier upon creation and provides methods for adding,
+ * <p>Entities are lightweight containers that exist primarily as identifiers and holders for
+ * components. They have no behavior of their own - all game logic related to entities is
+ * implemented in Systems that operate on their components. An entity's identity and behavior is
+ * defined entirely by its unique combination of components.
+ *
+ * <p>Each entity is assigned a unique identifier upon creation and provides methods for adding,
  * checking, retrieving, and removing components.
  */
 public class Entity {
@@ -20,11 +20,12 @@ public class Entity {
 
   /** Map of components attached to this entity, indexed by component Type */
   private final String id;
+
   private final Map<Class<? extends Component>, Component> components;
 
   /**
-   * Creates a new entity with a randomly generated unique identifier and no components.
-   * Components must be added using the {@link #addComponent} method.
+   * Creates a new entity with a randomly generated unique identifier and no components. Components
+   * must be added using the {@link #addComponent} method.
    */
   public Entity() {
     this.id = UUID.randomUUID().toString();
@@ -33,7 +34,7 @@ public class Entity {
 
   /**
    * Returns the ID for this entity.
-   * 
+   *
    * @return the entity's UUID as a String
    */
   public String getId() {
@@ -41,9 +42,9 @@ public class Entity {
   }
 
   /**
-   * Adds a component to this entity. If a component of the same type already exists,
-   * it will be replaced by the new component.
-   * 
+   * Adds a component to this entity. If a component of the same type already exists, it will be
+   * replaced by the new component.
+   *
    * @param <T> the component type
    * @param component the component instance to add
    * @return this entity instance for method chaining
@@ -67,8 +68,8 @@ public class Entity {
   /**
    * Retrieves a component of the specified type from this entity.
    *
-   * Note: This method assumes the component exists. It's recommended to check
-   * with {@link #hasComponent} before calling this method to avoid null returns.
+   * <p>Note: This method assumes the component exists. It's recommended to check with {@link
+   * #hasComponent} before calling this method to avoid null returns.
    *
    * @param <T> the component type to retrieve
    * @param componentClass the class object representing the component type
@@ -81,7 +82,7 @@ public class Entity {
 
   /**
    * Removes a component of the specified type from this entity
-   * 
+   *
    * @param <T> the component type to remove
    * @param componentClass the class object representing the component type
    */
@@ -90,8 +91,8 @@ public class Entity {
   }
 
   /**
-   * Compares this entity with another object for equality.
-   * Two entities are equal if they have the same unique identifier.
+   * Compares this entity with another object for equality. Two entities are equal if they have the
+   * same unique identifier.
    *
    * @param obj the object to compare with
    * @return true if the objects are equal, false otherwise
@@ -105,8 +106,8 @@ public class Entity {
   }
 
   /**
-   * Returns a hash code value for this entity.
-   * The hash code is derived from the entity's unique identifier.
+   * Returns a hash code value for this entity. The hash code is derived from the entity's unique
+   * identifier.
    *
    * @return a hash code value for this entity
    */

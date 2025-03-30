@@ -1,7 +1,7 @@
 package github.zekecode.cowboybebop;
 
 public class Main {
-    public static void main(String[] args) {
-        java.lang.System.out.println("Hello World!");
-    }
+  public static void main(String[] args) {
+    java.lang.System.out.println("Hello World!");
+  }
 }

@@ -23,8 +23,5 @@ jobs:
       - name: Grant Execute Permission for Gradle
         run: chmod +x gradlew
 
-      #- name: Build with Gradle
-      #  run: ./gradlew build
-
-      - name: Run Tests
-        run: ./gradlew test
+      - name: Build with Gradle (build also launches tests)
+        run: ./gradlew build
