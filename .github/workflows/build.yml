@@ -23,5 +23,8 @@ jobs:
       - name: Grant Execute Permission for Gradle
         run: chmod +x gradlew
 
+      - name: Run Spotless Apply to fix formatting issues
+        run: ./gradlew spotlessApply
+
       - name: Build with Gradle (build also launches tests)
         run: ./gradlew build
