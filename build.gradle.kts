@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter frameowrk for unit testing.
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.12.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.12.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
