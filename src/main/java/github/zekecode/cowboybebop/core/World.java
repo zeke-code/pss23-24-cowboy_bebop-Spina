@@ -6,19 +6,20 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * This class is essential as it acts as a central repository for my game,
- * keeping track of all entites and systems that will be in place.
+ * This class is essential as it acts as a central repository for my game, keeping track of all
+ * entites and systems that will be in place.
  */
 public class World {
   /** The collection of all entities currently existing in the game world */
   private final Set<Entity> entities;
+
   /** Ordered list of game systems that are executed during each update cycle */
   private final List<System> gameSystems;
 
   /**
-  * Creates a new empty game world.
-  * Initializes the entity collection and system list with no initial entities or systems.
-  */
+   * Creates a new empty game world. Initializes the entity collection and system list with no
+   * initial entities or systems.
+   */
   public World() {
     entities = new HashSet<>();
     gameSystems = new ArrayList<>();
@@ -26,6 +27,7 @@ public class World {
 
   /**
    * Creates and registers a new entity in the world.
+   *
    * @return a new Entity instance ready to have components added
    */
   public Entity createEntity() {
@@ -36,6 +38,7 @@ public class World {
 
   /**
    * Removes an entity from the world.
+   *
    * @param entity the entity to be removed
    */
   public void removeEntity(Entity entity) {
@@ -44,6 +47,7 @@ public class World {
 
   /**
    * Adds a system to the world to be executed during updates.
+   *
    * @param gameSystem the system to be added
    */
   public void addSystem(System gameSystem) {
@@ -52,7 +56,7 @@ public class World {
 
   /**
    * Removes a system from the world's update cycle.
-   * 
+   *
    * @param <T> the specific type of System being removed, extending the base System interface
    * @param system the system instance to be removed from the world
    * @return true if the system was found and removed, false if the system wasn't in the world
@@ -62,24 +66,23 @@ public class World {
   }
 
   /**
-   * Executes the update cycle for all systems registered in the world.
-   * This is a core method of the game loop that advances the game state 
-   * by the specified amount of time.
-   * 
-   * @param deltaTime the time elapsed between consecutive frames in seconds,
-   *                  used to ensure frame-rate independent behavior
+   * Executes the update cycle for all systems registered in the world. This is a core method of the
+   * game loop that advances the game state by the specified amount of time.
+   *
+   * @param deltaTime the time elapsed between consecutive frames in seconds, used to ensure
+   *     frame-rate independent behavior
    */
   public void update(double deltaTime) {
     for (System gameSystem : gameSystems) {
-        gameSystem.update(deltaTime);
+      gameSystem.update(deltaTime);
     }
   }
 
   /**
-   * Returns the set of entities that are currently present and tracked in the world.
-   * The set returned by this function is a defensive copy of all entities currently in the world.
-   * Any modifications to the returned set won't affect the actual game state.
-   * 
+   * Returns the set of entities that are currently present and tracked in the world. The set
+   * returned by this function is a defensive copy of all entities currently in the world. Any
+   * modifications to the returned set won't affect the actual game state.
+   *
    * @return a new HashSet containing all entities in the world
    */
   public Set<Entity> getEntities() {
@@ -88,7 +91,7 @@ public class World {
 
   /**
    * Filters and returns entities that have a specific component type.
-   * 
+   *
    * @param <T> the type of component to filter entities by
    * @param componentClass the class object representing the component type
    * @return a new HashSet containing only entities that possess the specified component
