@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class HealthComponentTest {
 
   private HealthComponent healthComponent;
-  private final int DEFAULT_MAX_HEALTH = 100;
+  private static final int DEFAULT_MAX_HEALTH = 100;
 
   @BeforeEach
   void setUp() {
